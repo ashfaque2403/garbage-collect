@@ -23,3 +23,20 @@ To set up Garbage Collect locally, follow these steps:
 ```bash
 git clone https://github.com/your-username/garbage-collect-django.git
 cd garbage-collect-django
+
+Install dependencies:
+bash
+Copy code
+pip install -r requirements.txt
+Apply migrations:
+bash
+Copy code
+python manage.py migrate
+Create a superuser account:
+bash
+Copy code
+python manage.py createsuperuser
+Run the development server:
+bash
+Copy code
+python manage.py runserver
