@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<section id="contact" class="contact">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>Complete Profile</h2>
+    </div>
+      <div class="row d-flex align-items-center justify-content-center ">
+        <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+          <form method="post" role="form" class="php-email-form">
+            {% csrf_token %}
+            {% include "messages.html" %}
+            <div class="row">
+              <div class="form-group col-md-12">
+                <label for="name">Name</label>
+                <input value="{{request.user.username}}" type="text" name="name" class="form-control" id="name" required>
+              </div>
+              <div class="form-group col-md-12">
+                <label for="name">Email</label>
+                <input value={{request.user.email}} type="text" name="email" class="form-control" id="name" readonly required>
+              </div>
+              <div class="form-group col-md-12">
+                <label for="name">Garbage Collection Area</label>
+                <input type="text" name="area" class="form-control" id="name" required>
+              </div>
+              <div class="form-group col-md-12">
+                <label for="name">Address</label>
+                <textarea  name="address" class="form-control" id="name" required></textarea>
+              </div>
+              
+            </div>
+            
+            <div class="text-center"><button type="submit">Add</button></div>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+</section>
+
+{% endblock %}

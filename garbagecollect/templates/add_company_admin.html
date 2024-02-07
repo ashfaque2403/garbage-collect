@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<section id="contact" class="contact">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>Add Company Administrator</h2>
+    </div>
+
+    <div class="row">
+      <!-- Information Section -->
+      <div class="col-lg-5 d-flex align-items-stretch">
+        <div class="info">
+            <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8b2ZmaWNlJTIwYWRtaW58ZW58MHx8MHx8fDA%3D" alt="Description of the image" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;">
+            <!-- Your existing information content here -->
+        </div>
+    </div>
+    
+  
+      <!-- Form Section -->
+      <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+          <form method="post" role="form" class="php-email-form">
+              {% csrf_token %}
+              {% include "messages.html" %}
+              <div class="row">
+                  <div class="form-group col-md-12">
+                      <label for="name">First Name</label>
+                      <input type="text" name="firstname" class="form-control" id="name" required>
+                  </div>
+                  <div class="form-group col-md-12">
+                      <label for="email">Last Name</label>
+                      <input type="text" name="lastname" class="form-control" id="email" required>
+                  </div>
+                  <div class="form-group col-md-12">
+                      <label for="area">Email</label>
+                      <input type="email" name="email" class="form-control" id="area" required>
+                  </div>
+                  <div class="form-group col-md-12">
+                      <label for="vehicle">Date of Birth</label>
+                      <input type="date" name="dob" class="form-control" id="vehicle" required>
+                  </div>
+
+                  <div class="form-group col-md-12">
+                    <label for="email">District</label>
+                    <input type="text" name="district" class="form-control" id="email" required>
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="gender">Gender</label>
+                    <select  name="gender" class="form-control" id="gender" required>
+                        <option value="M">Male</option>
+                        <option value="F">Female</option>
+                        <option value="O">Others</option>
+                    </select>
+                </div>
+                
+                <div class="form-group col-md-12">
+                    <label for="vehicle">Permanent Address</label>
+                    <input type="text" name="address" class="form-control" id="vehicle" required>
+                </div>
+                 
+                  <div class="form-group col-md-12">
+                      <label for="password">Password</label>
+                      <input type="password" class="form-control" name="password" id="password" required>
+                  </div> 
+                 
+              </div>
+          
+              <div class="text-center"><button type="submit">Add</button></div>
+          </form>
+      </div>
+  </div>
+  
+    </div>
+</section>
+
+{% endblock %}

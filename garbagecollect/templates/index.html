@@ -1,0 +1,345 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+
+
+  
+  {% if request.user.is_companyadmin %}
+  <section id="services" class="services section-bg">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title">
+        <h2>Services</h2>
+      </div>
+  
+      <div class="row">
+        <div class="col-xl-3 col-md-6 d-flex align-items-stretch mb-5" data-aos="zoom-in" data-aos-delay="100">
+          <div class="icon-box">
+            {% comment %} <div class="icon"><i class="bx bxl-dribbble"></i></div> {% endcomment %}
+            <h4><a href="{% url "add-driver-user" %}">Add Driver</a></h4>
+            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 d-flex align-items-stretch mb-5" data-aos="zoom-in" data-aos-delay="100">
+          <div class="icon-box">
+            {% comment %} <div class="icon"><i class="bx bxl-dribbble"></i></div> {% endcomment %}
+            <h4><a href="{% url "driver-list" %}">Remove Driver</a></h4>
+            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+          </div>
+        </div>
+  
+        <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0 mb-5" data-aos="zoom-in" data-aos-delay="200">
+          <div class="icon-box">
+            {% comment %} <div class="icon"><i class="bx bx-file"></i></div> {% endcomment %}
+            <h4><a href="{% url "add-garbage-collector" %}">Add Garbage Collector</a></h4>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0 mb-5" data-aos="zoom-in" data-aos-delay="200">
+          <div class="icon-box">
+            {% comment %} <div class="icon"><i class="bx bx-file"></i></div> {% endcomment %}
+            <h4><a href="{% url "garbage-collector" %}">Remove Garbage Collector</a></h4>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+          </div>
+        </div>
+  
+        <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0 mb-5" data-aos="zoom-in" data-aos-delay="300">
+          <div class="icon-box">
+            {% comment %} <div class="icon"><i class="bx bx-tachometer"></i></div> {% endcomment %}
+            <h4><a href="{% url "view-complaint" %}">View Complaints</a></h4>
+            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+          </div>
+        </div>
+  
+        <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0 mb-5" data-aos="zoom-in" data-aos-delay="400">
+          <div class="icon-box">
+            {% comment %} <div class="icon"><i class="bx bx-layer"></i></div> {% endcomment %}
+            <h4><a href="{% url "payment-report-view" %}">View Payment Report</a></h4>
+            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+          </div>
+        </div>
+  
+        <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
+          <div class="icon-box">
+            <div class="icon"><i class="fas fa-car"></i></div>
+            {% comment %} <div class="icon"><i class="bx bx-layer"></i></div> {% endcomment %}
+            <h4><a href="{% url "view-reply-complaint" %}">Replied Complaints</a></h4>
+            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+          </div>
+        </div>
+  
+        <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
+          <div class="icon-box">
+            <div class="icon"><i class="fas fa-layer-group"></i></div>
+
+            <h4><a href="{% url "garbage-report-view" %}">View Garbage Collected Report</a></h4>
+            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+  {% elif request.user.is_superuser %}
+  <div class="section-title mt-5">
+    <h2>Admin Page</h2>
+  </div>
+
+  <section id="services" class="services section-bg">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title">
+        <h2>Services</h2>
+      </div>
+  
+      <div class="row">
+        <div class="col-xl-3 col-md-6 d-flex align-items-stretch mb-5" data-aos="zoom-in" data-aos-delay="100">
+          <div class="icon-box">
+            {% comment %} <div class="icon"><i class="bx bxl-dribbble"></i></div> {% endcomment %}
+            <h4><a href="{% url "add-company-admin" %}">Add Administrator</a></h4>
+            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-6 d-flex align-items-stretch mb-5" data-aos="zoom-in" data-aos-delay="100">
+          <div class="icon-box">
+            {% comment %} <div class="icon"><i class="bx bxl-dribbble"></i></div> {% endcomment %}
+            <h4><a href="{% url "remove-admin" %}">Remove Administrator</a></h4>
+            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-6 d-flex align-items-stretch mb-5" data-aos="zoom-in" data-aos-delay="100">
+          <div class="icon-box">
+            {% comment %} <div class="icon"><i class="bx bxl-dribbble"></i></div> {% endcomment %}
+            <h4><a href="{% url "view-complaint" %}">View Complaints</a></h4>
+            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-6 d-flex align-items-stretch mb-5" data-aos="zoom-in" data-aos-delay="100">
+          <div class="icon-box">
+            {% comment %} <div class="icon"><i class="bx bxl-dribbble"></i></div> {% endcomment %}
+            <h4><a href="{% url "payment-report-view" %}">View Payment Report</a></h4>
+            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-6 d-flex align-items-stretch mb-5" data-aos="zoom-in" data-aos-delay="100">
+          <div class="icon-box">
+            {% comment %} <div class="icon"><i class="bx bxl-dribbble"></i></div> {% endcomment %}
+            <h4><a href="{% url "garbage-report-view" %}">View Garbage Report</a></h4>
+            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  {% elif request.user.is_garbagecollector %}
+  <div class="section-title mt-5">
+    <h2>Garbage Page</h2>
+    
+  </div>
+
+
+  <section id="services" class="services section-bg">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title">
+        <h2>Services</h2>
+      </div>
+  
+      <div class="row">
+        <div class="col-xl-3 col-md-6 d-flex align-items-stretch mb-5" data-aos="zoom-in" data-aos-delay="100">
+          <div class="icon-box">
+            {% comment %} <div class="icon"><i class="bx bxl-dribbble"></i></div> {% endcomment %}
+            <h4><a href="{% url "view-complaint" %}">View Complaint</a></h4>
+            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-6 d-flex align-items-stretch mb-5" data-aos="zoom-in" data-aos-delay="100">
+          <div class="icon-box">
+            {% comment %} <div class="icon"><i class="bx bxl-dribbble"></i></div> {% endcomment %}
+            <h4><a href="{% url "customer-details" %}">View Customer Details</a></h4>
+            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-6 d-flex align-items-stretch mb-5" data-aos="zoom-in" data-aos-delay="100">
+          <div class="icon-box">
+            {% comment %} <div class="icon"><i class="bx bxl-dribbble"></i></div> {% endcomment %}
+            <h4><a href="{% url "payment_report_create" %}">Submit Payment Report</a></h4>
+            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-6 d-flex align-items-stretch mb-5" data-aos="zoom-in" data-aos-delay="100">
+          <div class="icon-box">
+            {% comment %} <div class="icon"><i class="bx bxl-dribbble"></i></div> {% endcomment %}
+            <h4><a href="{% url "garbage-report" %}">Submit Garbage Report</a></h4>
+            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+  {% elif request.user.is_driver %}
+  <div class="section-title mt-5">
+    <h2>Driver Page</h2>
+  </div>
+
+
+  <section id="services" class="services section-bg">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title">
+        <h2>Services</h2>
+      </div>
+  
+      <div class="row">
+        <div class="col-xl-3 col-md-6 d-flex align-items-stretch mb-5" data-aos="zoom-in" data-aos-delay="100">
+          <div class="icon-box">
+            {% comment %} <div class="icon"><i class="bx bxl-dribbble"></i></div> {% endcomment %}
+            <h4><a href="{% url "view-complaint" %}">View Complaints</a></h4>
+            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-6 d-flex align-items-stretch mb-5" data-aos="zoom-in" data-aos-delay="100">
+          <div class="icon-box">
+            {% comment %} <div class="icon"><i class="bx bxl-dribbble"></i></div> {% endcomment %}
+            <h4><a href="{% url "customer-details" %}">View Customer Details</a></h4>
+            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-6 d-flex align-items-stretch mb-5" data-aos="zoom-in" data-aos-delay="100">
+          <div class="icon-box">
+            {% comment %} <div class="icon"><i class="bx bxl-dribbble"></i></div> {% endcomment %}
+            <h4><a href="{% url "payment-report-view" %}">View Payment Report</a></h4>
+            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-6 d-flex align-items-stretch mb-5" data-aos="zoom-in" data-aos-delay="100">
+          <div class="icon-box">
+            {% comment %} <div class="icon"><i class="bx bxl-dribbble"></i></div> {% endcomment %}
+            <h4><a href="{% url "garbage-report-view" %}">View Garbage Report</a></h4>
+            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  {% else %}
+
+  <div class="section-title mt-5">
+   
+
+    {% comment %} <a class="btn btn-info text-white" href="{% url 'complete' %}">Complete Profile</a> {% endcomment %}
+
+    
+  </div>
+
+
+  <section id="services" class="services section-bg">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title">
+        <h2>Services</h2>
+      </div>
+  
+      <div class="row">
+        <div class="col-xl-3 col-md-6 d-flex align-items-stretch mb-5" data-aos="zoom-in" data-aos-delay="100">
+          <div class="icon-box">
+            {% comment %} <div class="icon"><i class="bx bxl-dribbble"></i></div> {% endcomment %}
+            <h4><a href="{% url "add-complaint" %}">Add Complaints</a></h4>
+            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-6 d-flex align-items-stretch mb-5" data-aos="zoom-in" data-aos-delay="100">
+          <div class="icon-box">
+            {% comment %} <div class="icon"><i class="bx bxl-dribbble"></i></div> {% endcomment %}
+            <h4><a href="{% url "payment-customer-view" %}">View Payment Report</a></h4>
+            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-6 d-flex align-items-stretch mb-5" data-aos="zoom-in" data-aos-delay="100">
+          <div class="icon-box">
+            {% comment %} <div class="icon"><i class="bx bxl-dribbble"></i></div> {% endcomment %}
+            <h4><a href="{% url "view-reply-complaint" %}">Replied Complaints</a></h4>
+            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+  {% endif %}
+
+
+
+
+
+
+
+
+
+
+   
+    <!-- ======= Cta Section ======= -->
+    <section id="cta" class="cta">
+      <div class="container" data-aos="zoom-in">
+
+        <div class="row">
+          <div class="col-lg-9 text-center text-lg-start">
+            <h3>Call To Action</h3>
+            <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          
+        </div>
+
+      </div>
+    </section><!-- End Cta Section -->
+
+
+
+    {% endblock %}

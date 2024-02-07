@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+     
+        <section id="contact" class="contact">
+            <div class="container" data-aos="fade-up">
+      
+              <div class="section-title">
+                <h2>Login</h2>
+                
+            </div>
+      
+              <div class="row d-flex align-items-center justify-content-center ">
+      
+                
+                <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+                  <form method="post" role="form" class="php-email-form">
+                    {% csrf_token %}
+                    {% include "messages.html" %}
+                    <div class="form-group col-md-12">
+                        <label for="email">Username</label>
+                        <input type="text" name="username" class="form-control" id="email" required>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" name="password" id="password" required>
+                    </div>
+                    
+                    <div class="text-center"><button type="submit">Login</button></div>
+                    <div class="text-center mt-3"><p>Not a member? <a href="{% url "register" %}">Register</a></p></div>
+                </form>
+                
+                  
+                </div>
+      
+              </div>
+      
+            </div>
+        </section>
+      
+{% endblock %}

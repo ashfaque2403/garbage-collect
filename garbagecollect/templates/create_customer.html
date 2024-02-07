@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Customer</title>
+</head>
+<body>
+    <h2>Create Customer</h2>
+    <form method="post" action="{% url 'create_customer' %}">
+        {% csrf_token %}
+
+        <label for="customer_name">Customer Name:</label>
+        <input type="text" name="customer_name" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" required><br>
+
+        <label for="address">Address:</label>
+        <textarea name="address" rows="4" required></textarea><br>
+
+        <label for="garbage_collection_area">Garbage Collection Area:</label>
+        <input type="text" name="garbage_collection_area" required><br>
+
+        <label for="payment_text">Payment Text:</label>
+        <textarea name="payment_text" rows="4" required></textarea><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

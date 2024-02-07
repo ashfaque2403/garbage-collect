@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<section id="contact" class="contact">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>Add Payment</h2>
+    </div>
+
+    <div class="row">
+      <!-- Information Section -->
+      <div class="col-lg-5 d-flex align-items-stretch">
+        <div class="info">
+            <img src="https://wallpapercave.com/wp/wp6230150.png" alt="Description of the image" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;">
+            <!-- Your existing information content here -->
+        </div>
+    </div>
+    
+  
+      <!-- Form Section -->
+      <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+          <form method="post" role="form" class="php-email-form">
+              {% csrf_token %}
+              {% include "messages.html" %}
+              <div class="row">
+                  <div class="form-group col-md-12">
+                      <label for="driver_name">Name</label>
+                      <input  type="text" name="name" class="form-control" id="driver_name" required>
+                  </div>
+                  <div class="form-group col-md-12">
+                      <label for="driver_email">Email</label>
+                      <input value="{{request.user.email}}" type="text" name="email" class="form-control" id="driver_email" required>
+                  </div>
+                  <div class="form-group col-md-12">
+                      <label for="garbage_collection_area">Garbage Collection Area</label>
+                      <input type="text" name="area" class="form-control" id="garbage_collection_area" required>
+                  </div>
+                  <div class="form-group col-md-12">
+                      <label for="vehicle_name">Amount</label>
+                      <input type="text" name="amount" class="form-control" id="vehicle_name" required>
+                  </div>
+                 
+                  <div class="form-group col-md-12">
+                      <label for="driver_password">Collector</label>
+                      <input value="{{request.user}}" type="text" class="form-control" name="collector" id="driver_password" required>
+                  </div> 
+                 
+              </div>
+          
+              <div class="text-center"><button type="submit">Add</button></div>
+          </form>
+      </div>
+  </div>
+  
+    </div>
+</section>
+
+{% endblock %}

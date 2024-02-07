@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+
+
+  <section class="intro">
+    <div class="bg-image h-100" style="background-color: #fff;">
+      <div class="mask d-flex align-items-center h-100">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <div class="card shadow-2-strong" style="background-color: #fff;">
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <style>
+                      body,
+                      .intro {
+                        height: 100%;
+                      }
+  
+                      table td,
+                      table th {
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                      }
+  
+                      .card {
+                        border-radius: .5rem;
+                      }
+  
+                      .mask-custom {
+                        background: rgba(24, 24, 16, .2);
+                        border-radius: 2em;
+                        backdrop-filter: blur(25px);
+                        border: 2px solid rgba(255, 255, 255, 0.05);
+                        background-clip: padding-box;
+                        box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03);
+                      }
+                    </style>
+  
+                    <table class="table table-borderless mb-0 ">
+                      <thead>
+                        <tr >
+                          
+                          
+                          <th scope="col">Company Admin</th>
+                          <th scope="col">Name</th>
+                          <th scope="col" class="text-center">Action</th>
+                        
+                          
+
+                          
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for remove in driver_list %}
+                        <tr>
+                          
+                          <td>{{remove.user.username|capfirst}}</td>
+                            <td>{{remove.driver_name|capfirst}}</td>
+                            <td> {{remove.vehicle_name|capfirst}}</td>
+                            
+                            <td  class="text-center"><a href="{% url "remove-driver" remove.id %}"><button class="btn btn-danger" type="submit">Remove</button></a></td>
+                        </tr>
+                        {% endfor %}
+                        <!-- Add more rows as needed -->
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+{% endblock %}

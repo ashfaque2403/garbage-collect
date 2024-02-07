@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create User</title>
+</head>
+<body>
+    <h2>Create User</h2>
+    <form method="post" action="{% url 'create_user' %}">
+        {% csrf_token %}
+        
+        <label for="firstname">First Name:</label>
+        <input type="text" name="firstname" required><br>
+
+        <label for="lastname">Last Name:</label>
+        <input type="text" name="lastname" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" required><br>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" name="dob" required><br>
+
+        <label for="district">District:</label>
+        <input type="text" name="district" required><br>
+
+        <label for="gender">Gender:</label>
+        <select name="gender" required>
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+            <option value="O">Other</option>
+        </select><br>
+
+        <label for="permanent_address">Permanent Address:</label>
+        <textarea name="permanent_address" rows="4" required></textarea><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

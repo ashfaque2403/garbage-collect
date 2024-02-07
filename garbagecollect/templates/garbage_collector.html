@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<section id="contact" class="contact">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>Add Garbage Collector</h2>
+    </div>
+
+    <div class="row">
+      <!-- Information Section -->
+      <div class="col-lg-5 d-flex align-items-stretch">
+        <div class="info">
+            <img src="https://u6u9r8v9.rocketcdn.me/wp-content/uploads/2022/01/GettyImages-495351035.jpg" alt="Description of the image" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;">
+            <!-- Your existing information content here -->
+        </div>
+    </div>
+    
+  
+      <!-- Form Section -->
+      <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+        <form method="post" role="form" class="php-email-form">
+          {% csrf_token %}
+          {% include "messages.html" %}
+          <div class="row">
+            <div class="form-group col-md-12">
+              <label for="name">Name</label>
+              <input type="text" name="username" class="form-control" id="name" required>
+            </div>
+            <div class="form-group col-md-12">
+              <label for="name">Email</label>
+              <input type="text" name="email" class="form-control" id="name" required>
+            </div>
+            <div class="form-group col-md-12">
+              <label for="name">Garbage Collection Area</label>
+              <input type="text" name="area" class="form-control" id="name" required>
+            </div>
+            <div class="form-group col-md-12">
+              <label for="name">Address</label>
+              <textarea  name="address" class="form-control" id="name" required></textarea>
+            </div>
+            <div class="form-group col-md-12">
+              <label for="name">Password</label>
+              <input type="password" class="form-control" name="password" id="email" required>
+            </div>
+          </div>
+          
+          <div class="text-center"><button type="submit" class="btn btn-primary">Add</button></div>
+        </form>
+      </div>
+  </div>
+  
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+
+
+  <section class="intro">
+    <div class="bg-image h-100" style="background-color: #fff;">
+      <div class="mask d-flex align-items-center h-100">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <div class="card shadow-2-strong" style="background-color: #fff;">
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <style>
+                      body,
+                      .intro {
+                        height: 100%;
+                      }
+  
+                      table td,
+                      table th {
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                      }
+  
+                      .card {
+                        border-radius: .5rem;
+                      }
+  
+                      .mask-custom {
+                        background: rgba(24, 24, 16, .2);
+                        border-radius: 2em;
+                        backdrop-filter: blur(25px);
+                        border: 2px solid rgba(255, 255, 255, 0.05);
+                        background-clip: padding-box;
+                        box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03);
+                      }
+                    </style>
+  
+                    <table class="table table-borderless mb-0">
+                      <thead>
+                        <tr >
+                          
+                          <th scope="col">Customer Name</th>
+                          <th scope="col">Complaint text:</th>
+                          <th scope="col">Garbage collection area</th>
+                          <th scope="col">Complaint date</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for comp in complaint %}
+                        <tr>
+                          
+                          <td>{{comp.user.username}}</td>
+                            <td>{{comp.complaint_text}}</td>
+                            <td>{{comp.garbage_collection_area}}</td>
+                            <td>{{comp.complaint_date}}</td>
+                            
+                            {% if request.user.is_companyadmin %}
+                            <td><div class="text-center"><a href="{% url "reply_complaint" comp.id %}"><button class="btn btn-info text-white" type="submit">Reply</button></a></div></td>
+                            {% endif %}
+                              
+                            
+                        </tr>
+                        {% endfor %}
+                        <!-- Add more rows as needed -->
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+{% endblock %}
