@@ -1,7 +1,5 @@
 # Garbage Collect (Django)
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-
 ## Description
 
 Garbage Collect is a Django-based project designed to optimize waste management processes. This system provides a user-friendly interface for efficient garbage collection, route optimization, and waste disposal. The goal is to enhance waste management practices, reduce environmental impact, and streamline overall collection processes.
@@ -22,21 +20,16 @@ To set up Garbage Collect locally, follow these steps:
 
 ```bash
 git clone https://github.com/your-username/garbage-collect-django.git
-cd garbage-collect-django
+cd garbage-collect-django 
 
-Install dependencies:
-bash
-Copy code
+2.Install dependencies:
 pip install -r requirements.txt
-Apply migrations:
-bash
-Copy code
+
+3.Apply migrations:
 python manage.py migrate
-Create a superuser account:
-bash
-Copy code
+
+4.Create a superuser account:
 python manage.py createsuperuser
-Run the development server:
-bash
-Copy code
+
+5.Run the development server:
 python manage.py runserver
