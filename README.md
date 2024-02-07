@@ -7,10 +7,6 @@ Garbage Collect is a Django-based project designed to optimize waste management 
 ## Table of Contents
 
 - [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-- [Acknowledgements](#acknowledgements)
 
 ## Installation
 
